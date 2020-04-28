@@ -1,0 +1,5 @@
+
+    <div class="form-group">
+        <label for="InputconfirmPassword1">confirmPassword<span class='text-danger'>*</span></label>
+        <input type="confirmPassword" class="form-control" id="InputconfirmPassword1" placeholder="Confirm Password">
+    </div>
