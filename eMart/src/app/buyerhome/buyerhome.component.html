@@ -1,0 +1,32 @@
+<h3 class='ml-3 mt-3'>Buyer Home</h3>
+<form class="ml-3 form-inline w-50 my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<table class="table table-striped mt-3 mx-3">
+        <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Item name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price</th>
+          <th scope="col">Seller</th>
+          <th scope="col">View Detail</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items; index as i" ng-if='items.length'  >
+          <td (click)="jumpDetail(item.itemId)">
+                <img [src]="'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587909735017&di=ab90f54b73b1bcf5935c5e755e3b8abd&imgtype=0&src=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2018%2F094%2F26%2F8K6E4AWNFJ7F_3_600.jpg'" class="" style='height:50px; width:50px'>
+            </td>
+          <td (click)="jumpDetail(item.itemId)">
+            {{ item.itemName }}
+          </td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.price | number }}</td>
+          <td>{{ item.sellerName}}</td>
+          <td>{{ item.detail }}</td>
+        </tr>
+        </tbody>
+      </table>
