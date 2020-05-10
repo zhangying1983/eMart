@@ -17,7 +17,7 @@ import com.ibm.trainning.emart.entity.Item;
 import com.ibm.trainning.emart.service.ItemService;
 
 @RestController
-@RequestMapping("/item")
+@RequestMapping("/api/item")
 public class ItemController {
 	
 	@Autowired
