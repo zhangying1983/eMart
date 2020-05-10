@@ -4,21 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-public class Item {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Getter
-	@Setter
-	private Long id;
+public class Buyer extends User{
 
 	@Getter
 	@Setter
-	private String itemName;
-
+	private String mobileNumber;
 }

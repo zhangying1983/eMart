@@ -19,7 +19,7 @@ public class ItemService  {
 		// TODO it's better to user <code> itemRep.findAll(Example.of(item), pageable); </code>
 		if(StringUtils.isEmpty(item.getItemName())) {
 			return itemRep.findAll(pageable);
-		}	
+		}
 		return itemRep.findAllByItemNameLike("%" + item.getItemName() + "%", pageable);
 	}
 	
