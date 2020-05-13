@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router'; 
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-buyerhome',
@@ -8,18 +9,21 @@ import { Router} from '@angular/router';
 })
 export class BuyerhomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
-  items = [{itemName:"Apple",itemId:1,price:999999,category:"Phone",sellerName:"HUAWEI"}];
+  items = [];
 
   ngOnInit(): void {
+    this.search()
   }
 
-  search(): void{
-    alert(1)
+  search(): void {
+    this.http.get("api/item?itemName=" + "")
+    .toPromise()
+    .then((result: any) => { this.items = result.content})
   }
 
-  jumpDetail(itemId) : void{
+  jumpDetail(itemId): void {
     this.router.navigate(["/itemdetail"])
   }
 }
