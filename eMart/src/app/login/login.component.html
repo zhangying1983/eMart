@@ -1,19 +1,19 @@
-<form class='w-25 mx-auto' stye='margin-top:100px'>
+<form  class='w-25 mx-auto' stye='margin-top:100px'>
     <div>
         <h1 class='text-center'>User Login</h1>
     </div>
     <div class="form-group mt-5">
         <label for="login_username">User Name</label>
-        <input type="text" class="form-control" id="login_username" aria-describedby="username" placeholder="Enter User Name">
+        <input  [formControl]="username" type="text" class="form-control" id="login_username" aria-describedby="username" placeholder="Enter User Name">
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input  [formControl]="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
     <div class="form-check">
-        <input type="radio" class="form-check-input" id="usertype_buyer" name='user_type' checked>
+        <input type="radio" class="form-check-input" id="usertype_buyer" name='user_type' checked value='1'>
         <label class="form-check-label" for="usertype_buyer">I am a buyer</label>
-        <input type="radio" class="form-check-input" id="usertype_seller" name='user_type'>
+        <input type="radio" class="form-check-input" id="usertype_seller" name='user_type' value='2'>
         <label class="form-check-label" for="usertype_seller">I am a seller</label>
     </div>
     <button type="button" class="btn btn-primary" (click)="login()">Sign in</button>

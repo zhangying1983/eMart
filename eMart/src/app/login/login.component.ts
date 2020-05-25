@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { Router} from '@angular/router'; 
+import { HttpClient } from '@angular/common/http'; 
+import { System } from '../system'
+import { User } from '../user'
+import { FormBuilder } from '@angular/forms';
+import { FormGroup }                 from '@angular/forms';
+
+import { FormControl }                 from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +15,23 @@ import { Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  userType = {}
-  constructor(private router: Router) { }
+  userType : string = ""
+  username = new FormControl('');
+  password = new FormControl('');
+  constructor(private router: Router, private http: HttpClient, private formBuilder: FormBuilder) { 
+    
+  }
 
   ngOnInit(): void {
   }
 
   login() : void {
-    this.router.navigate(["/buyerhome"])
+    debugger
+    let token = "Basic " + btoa(this.username.value + ":" + this.password.value);
+    this.http.get('/api/user/current', {headers:{"Authorization":token}}).toPromise().then((result: any)=>{
+      System.user = result;
+      this.router.navigate(["/buyerhome"])
+    })
   }
 
   jumpDetail(itemId) : void{
