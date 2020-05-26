@@ -13,6 +13,7 @@ import lombok.Setter;
 @Entity
 public class Buyer extends User{
 
+	
 	@Getter
 	@Setter
 	private String mobileNumber;
