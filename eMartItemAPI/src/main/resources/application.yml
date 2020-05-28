@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: item
+  datasource:
+    url: jdbc:h2:file:./data/eMart
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      enabled: true
+      path: /h
+  jpa:
+    hibernate:
+      ddlAuto: update
+      dialect: org.hibernate.dialect.H2Dialect
+    show_sql: true
+    format_sql: true
+ureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
