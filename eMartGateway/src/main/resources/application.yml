@@ -2,9 +2,19 @@ server:
   port: 3000
 zuul:
   routes:
-    emart:
-      path: /api/**
-      service-id: emart
+    item:
+      path: /api/item/**
+      service-id: item
+      #url: http://localhost:3001
+      stripPrefix: false
+    user:
+      path: /api/user/**
+      service-id: user
+      #url: http://localhost:3001
+      stripPrefix: false
+    purchase:
+      path: /api/purchase/**
+      service-id: purchase
       #url: http://localhost:3001
       stripPrefix: false
   sensitive-headers: 

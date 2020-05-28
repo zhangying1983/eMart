@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: user
+  datasource:
+    url: jdbc:h2:file:./data/user
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      enabled: true
+      path: /h
+  jpa:
+    hibernate:
+      ddlAuto: update
+      dialect: org.hibernate.dialect.H2Dialect
+    show_sql: true
+    format_sql: true
+ureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
