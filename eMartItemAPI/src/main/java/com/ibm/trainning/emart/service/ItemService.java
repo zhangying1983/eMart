@@ -24,7 +24,8 @@ public class ItemService  {
 	}
 	
 	public Long createItem(Item item) {
-		return itemRep.save(item).getId();
+		Long id = itemRep.save(item).getId();
+		return id;
 	}
 	
 	public void deleteItem(Long id) {

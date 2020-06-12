@@ -16,24 +16,26 @@ constructor(private router: Router) {}
     next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     let clonedRequest = req
-    debugger
+    
     if(System.user){
         let token = "Basic " + btoa(System.user.username + ":" + System.user.password);
         clonedRequest = req.clone({
             headers: req.headers.set("Authorization", token)
           });
-    } else if(req.url.indexOf('/api/user/current') < 0
-&& !(req.url.indexOf('/api/user') >= 0 && req.method == 'POST')){
-        this.router.navigate(["/login"])
-        return
     }
+//      else if(req.url.indexOf('/api/user/current') < 0
+
+// && !(req.url.indexOf('/api/user') >= 0 && req.method == 'POST')){
+//         this.router.navigate(["/login"])
+//         return
+//     }
     console.log("new headers", clonedRequest.headers.keys());
     return next.handle(clonedRequest).pipe(
         tap(event=>{
-            debugger
+            
         }),
         catchError(error => {
-        debugger
+        
         if (error instanceof HttpErrorResponse && error.status === 401) {
         //   return this.handle401Error(request, next);
         

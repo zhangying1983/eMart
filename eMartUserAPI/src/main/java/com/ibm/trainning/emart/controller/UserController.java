@@ -27,6 +27,10 @@ public class UserController {
 	public User getItemInfo(@PathVariable("username") String username){
 		return userService.getUser(username);
 	}
+	@GetMapping("/{username}/exist")
+	public Boolean checkExist(@PathVariable("username") String username){
+		return userService.getUser(username) == null;
+	}
 
 	@PostMapping("/buyer")
 	public Long createBuyer(@RequestBody Buyer user) {

@@ -2,7 +2,7 @@
 <form class='w-25 mx-auto' stye='margin-top:100px'>
     <div class="form-group mt-5">
         <label for="login_username">User Name<span class='text-danger'>*</span></label>
-        <input [formControl]="username" required type="text" [ngClass]="{'form-control':true, 'is-invalid':errors.username}" id="login_username" aria-describedby="username" placeholder="Enter User Name">
+        <input [formControl]="item.itemImage" required type="file" [ngClass]="{'form-control':true, 'is-invalid':errors.username}" id="login_username" aria-describedby="username" placeholder="Enter User Name">
         <div class="invalid-feedback">
             {{errors.username}}
           </div>
