@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() : void {
-    debugger
+    
     let token = "Basic " + btoa(this.username.value + ":" + this.password.value);
     this.http.get('/api/user/current', {headers:{"Authorization":token}}).toPromise().then((result: any)=>{
       System.user = result;

@@ -1,3 +1,5 @@
+server:
+  port: 3001
 spring:
   application:
     name: item
@@ -16,10 +18,12 @@ spring:
       dialect: org.hibernate.dialect.H2Dialect
     show_sql: true
     format_sql: true
-ureka:
+eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://docker.for.mac.host.internal:8761/eureka/
+  instance:
+    hostname: localhost
 feign:
   client:
     config:

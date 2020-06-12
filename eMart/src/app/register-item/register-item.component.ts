@@ -13,14 +13,7 @@ import { FormBuilder } from '@angular/forms';
 export class SignupComponent implements OnInit {
 
 
-  userType: string = ""
-  username = new FormControl('');
-  password = new FormControl('');
-  confirmPassword = new FormControl('');
-  email = new FormControl('');
-  mobileNumber = new FormControl('');
-  errors = { username: "",
-    confirmPassword:"",
+  errors = { 
     hasError: false
   };
 

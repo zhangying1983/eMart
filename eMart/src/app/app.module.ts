@@ -16,13 +16,14 @@ import { ItemdetailComponent } from './itemdetail/itemdetail.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 
-import {AuthInterceptor} from './auth.interceptor'
+import {AuthInterceptor} from './auth.interceptor';
+import { RegisterItemComponent } from './register-item/register-item.component'
 
 
 @NgModule({
   declarations: [
     AppComponent
-    ,LoginComponent, LoginComponent, SignupComponent, SellersignupComponent, BuyerhomeComponent, ItemdetailComponent, CartComponent, OrderComponent
+    ,LoginComponent, LoginComponent, SignupComponent, SellersignupComponent, BuyerhomeComponent, ItemdetailComponent, CartComponent, OrderComponent, RegisterItemComponent
   ],
   imports: [
     BrowserModule,
